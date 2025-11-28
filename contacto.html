@@ -1,65 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Ecommerce</title>
+    <title>Contacto - Agencia Social</title>
 
-    <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        body{
+            background: #0f172a;  /* azul oscuro */
+            color: #e2e8f0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+        }
+
+        header{
+            padding: 18px 40px;
+            background: #0b1323;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        header a{
+            color: #cbd5e1;
+            margin-left: 22px;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        h2{
+            text-align: center;
+            margin-top: 40px;
+            font-size: 28px;
+        }
+
+        .container{
+            width: 90%;
+            max-width: 650px;
+            margin: 30px auto;
+            background: #1e293b;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.3);
+            border: 1px solid #334155;
+        }
+
+        label{
+            font-size: 15px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input, textarea, select{
+            width: 100%;
+            margin-top: 6px;
+            padding: 12px;
+            border-radius: 8px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: #f1f5f9;
+            font-size: 15px;
+        }
+
+        textarea{ height: 120px; }
+
+        button{
+            width: 100%;
+            margin-top: 18px;
+            padding: 12px;
+            background: #6366f1;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover{
+            background: #4f46e5;
+        }
+
+        .whats{
+            background: #25D366;
+        }
+        .whats:hover{
+            background: #1ebe56;
+        }
+    </style>
 </head>
 
-<body class="bg-light">
+<body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Mi Ecommerce</a>
+    <header>
+        <h3 style="color:#fff;">Agencia Social</h3>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="productos.html">Productos</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <h2>Formulario de Contacto</h2>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
-                    <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
-                    <li class="nav-item"><a href="contacto.html" class="nav-link active">Contacto</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="container">
 
-    <!-- FORMULARIO -->
-    <div class="container py-5">
-        <h2 class="mb-4 text-center">Formulario de Contacto</h2>
+        <form id="contactForm" action="#" method="post">
 
-        <div class="card shadow-lg p-4">
-            <form id="formContacto">
-                <div class="mb-3">
-                    <label class="form-label">Nombre completo</label>
-                    <input type="text" class="form-control" id="nombre" required>
-                </div>
+            <label>Nombre completo</label>
+            <input type="text" id="nombre" required>
 
-                <div class="mb-3">
-                    <label class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" required>
-                </div>
+            <label>Correo electrónico</label>
+            <input type="email" id="email" required>
 
-                <div class="mb-3">
-                    <label class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="mensaje" rows="4" required></textarea>
-                </div>
+            <label>WhatsApp</label>
+            <input type="tel" id="whatsapp" placeholder="+593..." required>
 
-                <button class="btn btn-primary w-100" type="submit">Enviar</button>
-            </form>
-        </div>
+            <label>Servicio que te interesa</label>
+            <select id="servicio">
+                <option disabled selected>Selecciona una opción</option>
+                <option>Gestión de Instagram</option>
+                <option>Gestión de TikTok</option>
+                <option>Meta Ads</option>
+                <option>Landing Page</option>
+                <option>Diseño Gráfico</option>
+            </select>
+
+            <label>Cuéntanos qué necesitas</label>
+            <textarea id="descripcion" placeholder="Detalle tu proyecto o consulta..."></textarea>
+
+            <button type="submit">Enviar solicitud</button>
+            <button class="whats" type="button" id="btnWhats">Enviar directo a WhatsApp</button>
+
+        </form>
     </div>
 
-    <script src="./js/contacto.js"></script>
+    <script>
+        document.getElementById('btnWhats').addEventListener('click', function(){
+            const num = document.getElementById('whatsapp').value.replace(/\D/g,"");
+            if(num==="") return alert("Ingresa tu número antes de continuar.");
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            const txt = encodeURIComponent("Hola 👋 Estoy interesado/a en los servicios de la Agencia Social.");
+            window.open(`https://wa.me/${num}?text=${txt}`);
+        });
+    </script>
 </body>
-
-</html>
+ </html>
