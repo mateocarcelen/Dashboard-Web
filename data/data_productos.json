@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "nombre": "Gestión de Redes Sociales",
+    "categoria": "social",
+    "precio": 120,
+    "descripcion": "Creamos y administramos contenido para Instagram, Facebook y TikTok.",
+    "imagen": "img/redes.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Publicidad en Meta Ads",
+    "categoria": "ads",
+    "precio": 150,
+    "descripcion": "Campañas de alto rendimiento en Facebook e Instagram Ads.",
+    "imagen": "img/ads.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Diseño Gráfico Profesional",
+    "categoria": "design",
+    "precio": 90,
+    "descripcion": "Diseño de logotipos, flyers, post y branding.",
+    "imagen": "img/diseno.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Desarrollo Web Empresarial",
+    "categoria": "web",
+    "precio": 300,
+    "descripcion": "Páginas web modernas, rápidas y optimizadas.",
+    "imagen": "img/web.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Community Manager Pro",
+    "categoria": "social",
+    "precio": 180,
+    "descripcion": "Gestión profesional de redes con estrategias de crecimiento.",
+    "imagen": "img/cm.jpg"
+  }
+]
