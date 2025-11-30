@@ -1,0 +1,77 @@
+/* ============ ESTILO GENERAL ============ */
+body {
+    background-color: #0f172a;
+    font-family: "Segoe UI", sans-serif;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Títulos */
+h1{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h2{
+    margin-top: 20px;
+    font-size: 22px;
+    opacity: .9;
+}
+
+/* ============ FORMULARIO ============ */
+form {
+    width: 80%;
+    margin: 30px auto;
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(255,255,255,.05);
+    display: grid;
+    gap: 15px;
+}
+
+/* Inputs */
+input, select, textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+textarea{
+    height: 120px;
+}
+
+/* Botón */
+button {
+    background:#4f46e5;
+    border: none;
+    color:white;
+    padding:10px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#6366f1;
+}
+
+/* ============ FOOTER ============ */
+footer{
+    margin-top: 50px;
+    padding: 20px;
+    background:#1e293b;
+    color: #cbd5e1;
+}
+
+footer a{
+    color:#60a5fa;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+footer a:hover{
+    text-decoration:underline;
+}
