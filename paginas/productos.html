@@ -1,183 +1,195 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Servicios - Agencia</title>
+    <meta charset="UTF-8">
+    <title>Servicios - Agencia</title>
 
-  <!-- BOOTSTRAP CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- TU CSS -->
-  <link rel="stylesheet" href="../css/style_producto.css">
+    <link rel="stylesheet" href="../css/dashboard.css"> 
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark custom-nav">
-  <div class="container-fluid px-3"> 
-    <a class="navbar-brand fw-bold fs-2 text-light" href="#">Agencia 360 Social</a> 
-
-    <ul class="navbar-nav ms-auto gap-2 d-flex flex-row pe-3">
-      <li class="nav-item">
-        <a class="btn btn-primary" href="dashboard.html">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a class="btn btn-success" href="productos.html">Productos</a>
-      </li>
-      <li class="nav-item">
-        <a class="btn btn-warning text-dark" href="contacto.html">Contacto</a>
-      </li>
-    </ul>
-
-  </div>
-</nav>
-
-
-<div class="container mt-4">
-  <h1 class="text-center mb-4">Nuestros Servicios</h1>
-
-  <div class="row mb-4">
-    <div class="col-md-6">
-    </div>
-  </div>
-
-  <div id="grid" class="row g-4"></div>
-
-  <div class="row mb-5 mt-4">
-    <div class="col-md-5">
-      <input type="number" id="minPrice" class="form-control" placeholder="Precio mínimo">
-    </div>
-    <div class="col-md-5">
-      <input type="number" id="maxPrice" class="form-control" placeholder="Precio máximo">
-    </div>
-    <div class="col-md-2 d-grid">
-    <button id="btnPrecio" type="button" class="btn btn-primary">Filtrar</button>
-    </div>
-  </div>
-</div>
-
-<div class="container my-5">
-    
-    <h1 class="text-center mb-5">Elige el Plan de Redes Sociales Ideal para tu Negocio</h1>
-    
-    <div class="table-responsive">
+    <div class="sidebar">
         
-        <table class="table table-bordered table-hover align-middle">
+        <!-- Aquí podrías poner el logo si quieres: <img src="../img/Agency360.png" alt="Logo Agency 360" class="logo"> -->
+        <h2>Agency 360</h2>
+        <a href="dashboard.html">
+            <i class="fa-solid fa-chart-line"></i> Dashboard
+        </a>
+        <a href="productos.html" class="active">
+            <i class="fa-solid fa-box"></i> Productos
+        </a>
+        <a href="contacto.html">
+            <i class="fa-solid fa-envelope"></i> Contacto
+        </a>
+    </div>
+
+    <div class="main-content">
+        
+        <div class="topbar mb-4">
+            <div class="topbar-left">
+                <h3>Catálogo de Servicios</h3> 
+            </div>
+            <div class="topbar-right">
+                <span class="badge-pill">Información de Servicios</span>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+
+            <!-- 1. TÍTULO PRINCIPAL -->
+            <h1 class="text-center mb-4 main-page-title">Nuestros Servicios</h1>
             
-            <thead>
-                <tr class="text-uppercase fw-bold text-center bg-light">
-                    <th scope="col" class="text-start" style="width: 200px;">Característica</th>
-                    <th scope="col" class="text-primary">Plan Redes Sociales</th>
-                    <th scope="col" class="text-primary">Plan Meta ADS</th>
-                    <th scope="col" class="text-primary">Plan Grafico profesional</th>
-                    <th scope="col" class="text-primary">Plan Web Empresarial</th>
-                    <th scope="col" class="text-primary">Plan Manager PRO</th>
-                </tr>
-            </thead>
+            <!-- 2. CUADRÍCULA DE CARDS (Se llena con JavaScript) -->
+            <div id="grid" class="row g-4">
+            </div>
+
+            <!-- 3. FILTROS DE PRECIO (AHORA UBICADOS DESPUÉS DE LAS CARDS) -->
+            <div class="row mb-5 mt-4 justify-content-center">
+                <div class="col-md-5">
+                    <input type="number" id="minPrice" class="form-control form-control-dark" placeholder="Precio mínimo">
+                </div>
+                <div class="col-md-5">
+                    <input type="number" id="maxPrice" class="form-control form-control-dark" placeholder="Precio máximo">
+                </div>
+                <div class="col-md-2 d-grid">
+                    <button id="btnPrecio" type="button" class="btn btn-accent">Filtrar</button>
+                </div>
+            </div>
+
+            <!-- 4. TABLA COMPARATIVA -->
+            <div class="table-card container my-5">
+                
+                <h1 class="text-center mb-5 section-title">Elige el Plan de Redes Sociales Ideal para tu Negocio</h1>
+                
+                <!-- El table-responsive es la clave para que la tabla no se desborde -->
+                <div class="table-responsive"> 
+                    
+                    <table class="table table-dark table-bordered table-hover align-middle">
+                        
+                        <thead>
+                            <tr class="text-uppercase fw-bold text-center table-header">
+                                <th scope="col" class="text-start" style="width: 200px;">Característica</th>
+                                <th scope="col" class="text-info">Plan Redes Sociales</th>
+                                <th scope="col" class="text-info">Plan Meta ADS</th>
+                                <th scope="col" class="text-info">Plan Grafico profesional</th>
+                                <th scope="col" class="text-info">Plan Web Empresarial</th>
+                                <th scope="col" class="text-info">Plan Manager PRO</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            
+                            <tr>
+                                <td colspan="6" class="table-secondary fw-bold">Alcance y Contenido</td>
+                            </tr>
+                            
+                            <tr>
+                                <th scope="row">N° de Plataformas (RRSS)</th>
+                                <td class="text-center">2</td>
+                                <td class="text-center">3</td>
+                                <td class="text-center">5</td>
+                                <td class="text-center">Ilimitado</td>
+                                <td class="text-center">Ilimitado</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Publicaciones / Mes (Feed)</th>
+                                <td class="text-center">8</td>
+                                <td class="text-center">15</td>
+                                <td class="text-center">25</td>
+                                <td class="text-center">40</td>
+                                <td class="text-center">Ilimitado</td>
+                            </tr>
+                            
+                            <tr>
+                                <th scope="row">Creación de Guía de Estilo (Brand Book)</th>
+                                <td class="text-center"><span class="text-danger">❌</span></td>
+                                <td class="text-center"><span class="text-success">✔</span></td>
+                                <td class="text-center"><span class="text-success">✔</span></td>
+                                <td class="text-center"><span class="text-success">✔</span></td>
+                                <td class="text-center"><span class="text-success">✔</span></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="6" class="table-secondary fw-bold">Interacción y Conversión</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Respuestas a Mensajes Privados y Comentarios</th>
+                                <td class="text-center">Respuestas básicas</td>
+                                <td class="text-center"><span class="text-success">✔</span></td>
+                                <td class="text-center"><span class="text-success">✔</span></td>
+                                <td class="text-center"><span class="text-success">✔</span></td>
+                                <td class="text-center"><span class="text-success">✔</span></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Reporte Mensual de Métricas</th>
+                                <td class="text-center">Básico</td>
+                                <td class="text-center">Intermedio</td>
+                                <td class="text-center">Completo</td>
+                                <td class="text-center">Completo + Estrategia</td>
+                                <td class="text-center">Completo + Reunión Ejecutiva</td>
+                            </tr>
+                            
+                            <tr>
+                                <th scope="row">Gestión de Campañas Pagadas (Ads)</th>
+                                <td class="text-center"><span class="text-danger">❌</span></td>
+                                <td class="text-center">Solo Configuración</td>
+                                <td class="text-center">Básico</td>
+                                <td class="text-center">Completo</td>
+                                <td class="text-center">Completo + Optimización Diaria</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             
-            <tbody>
-                
-                <tr>
-                    <td colspan="6" class="table-secondary fw-bold">Alcance y Contenido</td>
-                </tr>
-                
-                <tr>
-                    <th scope="row">N° de Plataformas (RRSS)</th>
-                    <td class="text-center">2</td>
-                    <td class="text-center">3</td>
-                    <td class="text-center">5</td>
-                    <td class="text-center">Ilimitado</td>
-                    <td class="text-center">Ilimitado</td>
-                </tr>
+        </div>
+        
+        <!-- INICIO DEL FOOTER DENTRO DE main-content -->
+        <footer class="bg-dark text-light pt-4 footer-dashboard mt-5">
+            <div class="container">
+                <div class="row">
 
-                <tr>
-                    <th scope="row">Publicaciones / Mes (Feed)</th>
-                    <td class="text-center">8</td>
-                    <td class="text-center">15</td>
-                    <td class="text-center">25</td>
-                    <td class="text-center">40</td>
-                    <td class="text-center">Ilimitado</td>
-                </tr>
-                
-                <tr>
-                    <th scope="row">Creación de Guía de Estilo (Brand Book)</th>
-                    <td class="text-center"><span class="text-danger">❌</span></td>
-                    <td class="text-center"><span class="text-success">✔</span></td>
-                    <td class="text-center"><span class="text-success">✔</span></td>
-                    <td class="text-center"><span class="text-success">✔</span></td>
-                    <td class="text-center"><span class="text-success">✔</span></td>
-                </tr>
+                    <div class="col-md-4 mb-3">
+                        <h5>Agencia Digital</h5>
+                        <p>Impulsamos tu negocio con marketing digital, diseño y desarrollo web profesional.</p>
+                    </div>
 
-                <tr>
-                    <td colspan="6" class="table-secondary fw-bold">Interacción y Conversión</td>
-                </tr>
+                    <div class="col-md-4 mb-3">
+                        <h5>Enlaces</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="dashboard.html" class="text-light text-decoration-none">Dashboard</a></li>
+                            <li><a href="productos.html" class="text-light text-decoration-none">Productos</a></li>
+                            <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
+                        </ul>
+                    </div>
 
-                <tr>
-                    <th scope="row">Respuestas a Mensajes Privados y Comentarios</th>
-                    <td class="text-center">Respuestas básicas</td>
-                    <td class="text-center"><span class="text-success">✔</span></td>
-                    <td class="text-center"><span class="text-success">✔</span></td>
-                    <td class="text-center"><span class="text-success">✔</span></td>
-                    <td class="text-center"><span class="text-success">✔</span></td>
-                </tr>
+                    <div class="col-md-4 mb-3">
+                        <h5>Contacto</h5>
+                        <p>Email: agencia@email.com</p>
+                        <p>Tel: 099 821 4086</p>
+                    </div>
+                </div>
 
-                <tr>
-                    <th scope="row">Reporte Mensual de Métricas</th>
-                    <td class="text-center">Básico</td>
-                    <td class="text-center">Intermedio</td>
-                    <td class="text-center">Completo</td>
-                    <td class="text-center">Completo + Estrategia</td>
-                    <td class="text-center">Completo + Reunión Ejecutiva</td>
-                </tr>
-                
-                <tr>
-                    <th scope="row">Gestión de Campañas Pagadas (Ads)</th>
-                    <td class="text-center"><span class="text-danger">❌</span></td>
-                    <td class="text-center">Solo Configuración</td>
-                    <td class="text-center">Básico</td>
-                    <td class="text-center">Completo</td>
-                    <td class="text-center">Completo + Optimización Diaria</td>
-                </tr>
+                <hr>
+                <div class="text-center pb-3">
+                    © 2025 Agencia Digital - Todos los derechos reservados
+                </div>
+            </div>
+        </footer>
 
-            </tbody>
-        </table>
-    </div>
-</div>
 
-<!-- ✅ FOOTER -->
-<footer class="bg-dark text-light pt-4">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-4 mb-3">
-        <h5>Agencia Digital</h5>
-        <p>Impulsamos tu negocio con marketing digital, diseño y desarrollo web profesional.</p>
-      </div>
-
-      <div class="col-md-4 mb-3">
-        <h5>Enlaces</h5>
-        <ul class="list-unstyled">
-          <li><a href="dashboard.html" class="text-light text-decoration-none">Dashboard</a></li>
-          <li><a href="productos.html" class="text-light text-decoration-none">Productos</a></li>
-          <li><a href="contacto.html" class="text-light text-decoration-none">Contacto</a></li>
-        </ul>
-      </div>
-
-      <div class="col-md-4 mb-3">
-        <h5>Contacto</h5>
-        <p>Email: agencia@email.com</p>
-        <p>Tel: 099 821 4086</p>
-      </div>
-    </div>
-
-    <hr>
-    <div class="text-center pb-3">
-      © 2025 Agencia Digital - Todos los derechos reservados
-    </div>
-  </div>
-</footer>
-
-<script src="../js/app_productos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </div> <!-- CIERRE CORRECTO DE main-content -->
+    
+    <script src="../js/app_productos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
