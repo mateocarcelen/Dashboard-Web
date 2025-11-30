@@ -1,49 +1,160 @@
-// TARJETAS ANIMADAS (contador suave)
-function animateCounter(id, target) {
-  let count = 0;
-  const element = document.getElementById(id);
-  const interval = setInterval(() => {
-    count++;
-    element.textContent = count;
-    if (count >= target) clearInterval(interval);
-  }, 20);
+// Animación numérica suave
+function animateValue(id, target) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  let start = 0;
+  const duration = 600; // ms
+  const stepTime = 20;
+  const increment = target / (duration / stepTime);
+
+  const timer = setInterval(() => {
+    start += increment;
+    if (start >= target) {
+      start = target;
+      clearInterval(timer);
+    }
+    el.textContent = Math.floor(start);
+  }, stepTime);
 }
 
-animateCounter("clientes", 120);
-animateCounter("proyectos", 15);
-animateCounter("consultas", 89);
-animateCounter("redes", 34);
+// Cargar datos desde JSON
+fetch("../data/dashboard.json")
+  .then((res) => res.json())
+  .then((data) => {
+    const k = data.kpis;
 
-// GRÁFICA DE BARRAS (Clientes por mes)
-const ctxBar = document.getElementById('barChart').getContext('2d');
-new Chart(ctxBar, {
-  type: 'bar',
-  data: {
-    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
-    datasets: [{
-      label: 'Clientes',
-      data: [12, 19, 15, 18, 24, 30],
-      backgroundColor: '#38bdf8'
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: { legend: { display: false } }
-  }
-});
+    // KPIs
+    animateValue("kpiClientes", k.clientes);
+    animateValue("kpiClientesNuevos", k.clientes_nuevos);
+    animateValue("kpiProyectosActivos", k.proyectos_activos);
+    animateValue("kpiProyectosCompletados", k.proyectos_completados);
+    animateValue("kpiConsultas", k.consultas);
+    animateValue("kpiRedes", k.redes);
+    animateValue("kpiCampañas", k.campañas_activas);
 
-// GRÁFICA DE TORTA (Servicios más usados)
-const ctxPie = document.getElementById('pieChart').getContext('2d');
-new Chart(ctxPie, {
-  type: 'doughnut',
-  data: {
-    labels: ['Instagram', 'Meta Ads', 'Diseño Gráfico', 'Landing Page'],
-    datasets: [{
-      data: [30, 20, 25, 25],
-      backgroundColor: ['#0ea5e9', '#10b981', '#facc15', '#f43f5e']
-    }]
-  },
-  options: {
-    responsive: true
-  }
-});
+    const gan = document.getElementById("kpiGanancias");
+    if (gan) gan.textContent = "$" + k.ganancias_mensuales.toLocaleString();
+
+    // Gráfica de línea: clientes por mes
+    new Chart(document.getElementById("lineChart"), {
+      type: "line",
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        datasets: [
+          {
+            label: "Clients",
+            data: data.clientes_por_mes,
+            borderColor: "#38bdf8",
+            backgroundColor: "rgba(56,189,248,0.2)",
+            tension: 0.4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    // Donut: servicios usados
+    const labelsServicios = Object.keys(data.servicios_usados);
+    const valoresServicios = Object.values(data.servicios_usados);
+
+    new Chart(document.getElementById("doughnutChart"), {
+      type: "doughnut",
+      data: {
+        labels: labelsServicios,
+        datasets: [
+          {
+            data: valoresServicios,
+            backgroundColor: ["#0ea5e9", "#10b981", "#facc15", "#f97316"]
+          }
+        ]
+      },
+      options: {
+        responsive: true
+      }
+    });
+
+    // Barras: rendimiento redes
+    const labelsRedes = Object.keys(data.rendimiento_redes);
+    const valoresRedes = Object.values(data.rendimiento_redes);
+
+    new Chart(document.getElementById("barChart"), {
+      type: "bar",
+      data: {
+        labels: labelsRedes,
+        datasets: [
+          {
+            label: "Performance",
+            data: valoresRedes,
+            backgroundColor: "#38bdf8"
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    // Radar: comparación KPIs
+    new Chart(document.getElementById("radarChart"), {
+      type: "radar",
+      data: {
+        labels: ["Clients", "Projects", "Queries", "Networks", "Conversions"],
+        datasets: [
+          {
+            label: "KPI level",
+            data: [
+              k.clientes,
+              k.proyectos_activos,
+              k.consultas,
+              k.redes,
+              k.conversiones
+            ],
+            borderColor: "#38bdf8",
+            backgroundColor: "rgba(56,189,248,0.2)"
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          r: {
+            angleLines: { color: "#1f2937" },
+            grid: { color: "#111827" }
+          }
+        }
+      }
+    });
+
+    // Tabla de actividad
+    const tbody = document.getElementById("tablaActividad");
+    if (tbody) {
+      tbody.innerHTML = "";
+      data.actividad.forEach((row) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${row.cliente}</td>
+          <td>${row.servicio}</td>
+          <td>${row.fecha}</td>
+          <td>
+            <span class="status ${
+              row.estado === "Activo"
+                ? "status-activo"
+                : row.estado === "Pendiente"
+                ? "status-pendiente"
+                : "status-finalizado"
+            }">
+              ${row.estado}
+            </span>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+  })
+  .catch((err) => {
+    console.error("Error loading dashboard data:", err);
+  });

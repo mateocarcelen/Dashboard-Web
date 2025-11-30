@@ -1,0 +1,196 @@
+/* ==== GENERAL ==== */
+body {
+  margin: 0;
+  background: #020617;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #e2e8f0;
+}
+
+/* ==== SIDEBAR ==== */
+.sidebar {
+  width: 250px;
+  background: #020617;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 24px 16px;
+  border-right: 1px solid #1f2937;
+}
+
+.sidebar h2 {
+  color: #f9fafb;
+  font-size: 22px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.sidebar a {
+  color: #cbd5e1;
+  display: block;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.sidebar a i {
+  margin-right: 8px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #0ea5e9;
+  color: #f9fafb;
+}
+
+/* ==== MAIN CONTENT ==== */
+.main-content {
+  margin-left: 250px;
+  padding: 20px 26px;
+}
+
+/* ==== TOPBAR ==== */
+.topbar {
+  background: #020617;
+  border-radius: 12px;
+  padding: 12px 20px;
+  border: 1px solid #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar-left h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar-right .badge-pill {
+  background: #0ea5e9;
+  color: #f9fafb;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+}
+
+/* ==== CARDS KPIs ==== */
+.card-dashboard {
+  background: #020617;
+  border-radius: 14px;
+  padding: 22px 18px;
+  text-align: left;
+  border: 1px solid #111827;
+  transition: 0.2s;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.6);
+}
+
+.card-dashboard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.8);
+}
+
+.card-dashboard .icon {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: #38bdf8;
+}
+
+.card-dashboard h5 {
+  margin: 0;
+  font-size: 15px;
+  color: #9ca3af;
+}
+
+.card-dashboard p {
+  margin: 4px 0 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+/* ==== SECCIONES ==== */
+.section-title {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: #e5e7eb;
+}
+
+/* ==== CARDS DE GRÁFICAS Y TABLA ==== */
+.chart-card,
+.table-card {
+  background: #020617;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid #111827;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.6);
+}
+
+/* ==== TABLA ==== */
+.table-card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table-card thead {
+  background: #020617;
+}
+
+.table-card th,
+.table-card td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #111827;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.status-activo {
+  background: rgba(22, 163, 74, 0.1);
+  color: #22c55e;
+}
+
+.status-pendiente {
+  background: rgba(234, 179, 8, 0.1);
+  color: #facc15;
+}
+
+.status-finalizado {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 992px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-content {
+    margin: 0;
+  }
+}

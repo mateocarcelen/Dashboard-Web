@@ -1,0 +1,53 @@
+{
+  "kpis": {
+    "clientes": 120,
+    "clientes_nuevos": 18,
+    "proyectos_activos": 15,
+    "proyectos_completados": 7,
+    "consultas": 89,
+    "redes": 34,
+    "campañas_activas": 6,
+    "ganancias_mensuales": 3200,
+    "alcance_mensual": 18500,
+    "conversiones": 124
+  },
+  "clientes_por_mes": [40, 55, 60, 70, 82, 95],
+  "servicios_usados": {
+    "Instagram": 40,
+    "Meta Ads": 25,
+    "Diseño": 20,
+    "Landing Page": 15
+  },
+  "rendimiento_redes": {
+    "Instagram": 80,
+    "Facebook": 65,
+    "TikTok": 75,
+    "LinkedIn": 50
+  },
+  "actividad": [
+    {
+      "cliente": "Café Aurelio",
+      "servicio": "Instagram + Meta Ads",
+      "fecha": "2025-11-01",
+      "estado": "Activo"
+    },
+    {
+      "cliente": "NovaGym",
+      "servicio": "Landing Page + Meta Ads",
+      "fecha": "2025-10-28",
+      "estado": "Pendiente"
+    },
+    {
+      "cliente": "Luna Boutique",
+      "servicio": "Diseño gráfico + RRSS",
+      "fecha": "2025-10-21",
+      "estado": "Activo"
+    },
+    {
+      "cliente": "Quito Tours",
+      "servicio": "Instagram + TikTok",
+      "fecha": "2025-10-15",
+      "estado": "Finalizado"
+    }
+  ]
+}
