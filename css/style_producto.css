@@ -4,7 +4,7 @@ body {
 
 .navbar-brand {
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.9rem;
 }
 
 h1 {
@@ -38,5 +38,10 @@ h1 {
 }
 
 .custom-nav {
-  background-color: #eaa640; /* morado */
+  background-color: #b1611b; 
 }
+
+.filtro-precio {
+  margin-top: 50px;
+}
+

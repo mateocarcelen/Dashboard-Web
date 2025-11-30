@@ -1,10 +1,10 @@
 const grid = document.getElementById("grid");
-const search = document.getElementById("q");
-const filter = document.getElementById("filter");
+const minPrice = document.getElementById("minPrice");
+const maxPrice = document.getElementById("maxPrice");
+const btnPrecio = document.getElementById("btnPrecio");
 
 let servicios = [];
 
-// Cargar datos desde JSON
 fetch("../data/data_productos.json")
   .then(res => res.json())
   .then(data => {
@@ -12,7 +12,6 @@ fetch("../data/data_productos.json")
     mostrar(servicios);
   });
 
-// Mostrar cards
 function mostrar(lista) {
   grid.innerHTML = "";
 
@@ -32,21 +31,13 @@ function mostrar(lista) {
   });
 }
 
-// Buscador
-search.addEventListener("input", () => {
-  const texto = search.value.toLowerCase();
-  const filtrado = servicios.filter(s =>
-    s.nombre.toLowerCase().includes(texto)
-  );
-  mostrar(filtrado);
-});
+btnPrecio.addEventListener("click", () => {
+  const min = minPrice.value ? parseFloat(minPrice.value) : 0;
+  const max = maxPrice.value ? parseFloat(maxPrice.value) : Infinity;
 
-// Filtro por categoría
-filter.addEventListener("change", () => {
-  if (filter.value === "all") {
-    mostrar(servicios);
-  } else {
-    const filtrado = servicios.filter(s => s.categoria === filter.value);
-    mostrar(filtrado);
-  }
+  const resultado = servicios.filter(s => {
+    return s.precio >= min && s.precio <= max;
+  });
+
+  mostrar(resultado);
 });
