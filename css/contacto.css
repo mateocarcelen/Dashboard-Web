@@ -1,77 +1,103 @@
 /* ============ ESTILO GENERAL ============ */
-body {
-    background-color: #0f172a;
-    font-family: "Segoe UI", sans-serif;
-    color: white;
+
+:root{
+    --bg: #0f172a;
+    --card: #0c1850;
+    --text: #e2e8f0;
+    --accent: #38bdf8;
+    --border: #111827;
+}
+
+/* --- Fondo General de la Página --- */
+body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ================= FORMULARIO DE CONTACTO ================= */
+
+.form-contact-container{
+    width: 90%;
+    max-width: 650px;
+    background: var(--card);
+    padding: 30px;
+    margin: 45px auto;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 20px rgba(15,23,42,0.5);
+}
+
+.form-contact-container h2{
     text-align: center;
-    padding: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--accent);
 }
 
-/* Títulos */
-h1{
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 10px;
+label{ font-weight: 600; }
+
+input, select, textarea{
+    background-color: #111827;
+    color: var(--text);
+    border: 1px solid #1f2937;
 }
 
-h2{
-    margin-top: 20px;
-    font-size: 22px;
-    opacity: .9;
+input:focus, textarea:focus, select:focus{
+    border-color: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
 }
 
-/* ============ FORMULARIO ============ */
-form {
-    width: 80%;
-    margin: 30px auto;
-    background: #1e293b;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(255,255,255,.05);
-    display: grid;
-    gap: 15px;
+
+/* ================= FOOTER DASHBOARD ================= */
+
+.footer-dashboard {
+    margin-left: 250px; 
+    background: var(--card) !important; 
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    padding: 18px;
+    text-align: center;
 }
 
-/* Inputs */
-input, select, textarea {
+@media (max-width: 992px) {
+    .footer-dashboard { margin-left: 0; }
+}
+
+
+/* ================= BOTÓN PRINCIPAL ================= */
+
+.btn-accent{
+    background-color: #0ea5e9;
+    border-color: #0ea5e9;
+    color: #ffffff;
+    font-weight: 600;
+    width: 100%;
     padding: 10px;
-    border-radius: 6px;
-    border: none;
-    outline: none;
+    border-radius: 8px;
+}
+.btn-accent:hover{
+    filter: brightness(1.15);
 }
 
-textarea{
-    height: 120px;
+
+/* ------------- ESTE ES EL MISMO ESTILO QUE USAN TARJETAS Y TABLAS ----------- */
+
+#grid .card, .table-card{
+    background: var(--card);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.6);
+    color: var(--text);
 }
 
-/* Botón */
-button {
-    background:#4f46e5;
-    border: none;
-    color:white;
-    padding:10px;
-    border-radius:8px;
-    cursor:pointer;
+#grid .card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.8);
 }
 
-button:hover{
-    background:#6366f1;
-}
-
-/* ============ FOOTER ============ */
-footer{
-    margin-top: 50px;
-    padding: 20px;
-    background:#1e293b;
-    color: #cbd5e1;
-}
-
-footer a{
-    color:#60a5fa;
-    text-decoration:none;
-    margin:0 8px;
-}
-
-footer a:hover{
-    text-decoration:underline;
+#grid .card-title{
+    color: var(--accent);
+    font-weight: 600;
 }

@@ -1,153 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Agencia Social</title>
+    <title>Contacto</title>
 
-    <style>
-        body{
-            background: #0f172a;  /* azul oscuro */
-            color: #e2e8f0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            margin: 0;
-        }
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        header{
-            padding: 18px 40px;
-            background: #0b1323;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
+    <!-- Estilos propios de contacto -->
+    <link rel="stylesheet" href="../css/contacto.css">
 
-        header a{
-            color: #cbd5e1;
-            margin-left: 22px;
-            text-decoration: none;
-            font-size: 15px;
-        }
-
-        h2{
-            text-align: center;
-            margin-top: 40px;
-            font-size: 28px;
-        }
-
-        .container{
-            width: 90%;
-            max-width: 650px;
-            margin: 30px auto;
-            background: #1e293b;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 0 12px rgba(0,0,0,0.3);
-            border: 1px solid #334155;
-        }
-
-        label{
-            font-size: 15px;
-            margin-top: 10px;
-            display: block;
-        }
-
-        input, textarea, select{
-            width: 100%;
-            margin-top: 6px;
-            padding: 12px;
-            border-radius: 8px;
-            background: #0f172a;
-            border: 1px solid #334155;
-            color: #f1f5f9;
-            font-size: 15px;
-        }
-
-        textarea{ height: 120px; }
-
-        button{
-            width: 100%;
-            margin-top: 18px;
-            padding: 12px;
-            background: #6366f1;
-            border: none;
-            color: white;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        button:hover{
-            background: #4f46e5;
-        }
-
-        .whats{
-            background: #25D366;
-        }
-        .whats:hover{
-            background: #1ebe56;
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Agencia</a>
-    <header>
-        <h3 style="color:#fff;">Agencia Social</h3>
-        <nav>
-            <a href="index.html">Dashboard</a>
-            <a href="productos.html">Productos</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </header>
+    <!-- NAVBAR con enlaces cruzados -->
+    <nav class="navbar navbar-dark navbar-expand-lg px-4" style="background:#0a112d;">
+        <a class="navbar-brand fw-bold text-light" href="#">Agencia Digital</a>
 
-    <h2>Formulario de Contacto</h2>
+        <ul class="navbar-nav ms-auto d-flex gap-3">
+            <li class="nav-item"><a class="nav-link text-light" href="dashboard.html">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="productos.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link active fw-bold text-info" href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
 
-    <div class="container">
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container py-5">
+        <h1 class="main-page-title text-center">Formulario de Contacto</h1>
 
-        <form id="contactForm" action="#" method="post">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
 
-            <label>Nombre completo</label>
-            <input type="text" id="nombre" required>
+                <div class="form-contact-container">
 
-            <label>Correo electrónico</label>
-            <input type="email" id="email" required>
+                    <h2>Contáctanos</h2>
 
-            <label>WhatsApp</label>
-            <input type="tel" id="whatsapp" placeholder="+593..." required>
+                    <form id="form-contacto">
 
-            <label>Servicio que te interesa</label>
-            <select id="servicio">
-                <option disabled selected>Selecciona una opción</option>
-                <option>Gestión de Instagram</option>
-                <option>Gestión de TikTok</option>
-                <option>Meta Ads</option>
-                <option>Landing Page</option>
-                <option>Diseño Gráfico</option>
-            </select>
+                        <div class="mb-3">
+                            <label>Nombre completo</label>
+                            <input type="text" class="form-control" placeholder="Ej: Paula Villarreal">
+                        </div>
 
-            <label>Cuéntanos qué necesitas</label>
-            <textarea id="descripcion" placeholder="Detalle tu proyecto o consulta..."></textarea>
+                        <div class="mb-3">
+                            <label>Correo electrónico</label>
+                            <input type="email" class="form-control" placeholder="ejemplo@gmail.com">
+                        </div>
 
-            <button type="submit">Enviar solicitud</button>
-            <button class="whats" type="button" id="btnWhats">Enviar directo a WhatsApp</button>
+                        <div class="mb-3">
+                            <label>Servicio de interés</label>
+                            <select class="form-select">
+                                <option selected disabled>Selecciona un servicio</option>
+                                <option>Gestión Instagram</option>
+                                <option>Gestión TikTok</option>
+                                <option>Paquete de diseño gráfico</option>
+                                <option>Campaña Meta Ads</option>
+                            </select>
+                        </div>
 
-        </form>
+                        <div class="mb-3">
+                            <label>Mensaje</label>
+                            <textarea class="form-control" rows="4" placeholder="Describe tu proyecto..."></textarea>
+                        </div>
+
+                        <button class="btn btn-accent w-100">Enviar</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script>
-        document.getElementById('btnWhats').addEventListener('click', function(){
-            const num = document.getElementById('whatsapp').value.replace(/\D/g,"");
-            if(num==="") return alert("Ingresa tu número antes de continuar.");
+    <!-- FOOTER -->
+    <footer class="footer-dashboard">
+        <div class="text-center pb-3">
+            © 2025 Agencia Digital - Todos los derechos reservados
+        </div>
+    </footer>
 
-            const txt = encodeURIComponent("Hola 👋 Estoy interesado/a en los servicios de la Agencia Social.");
-            window.open(`https://wa.me/${num}?text=${txt}`);
-        });
-    </script>
 </body>
- </html>
+</html>
