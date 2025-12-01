@@ -1,40 +1,138 @@
+/* ============ VARIABLES DE COLOR (DARK MODE) ============ */
+:root {
+    --bg-light: #F7F8F9; /* Fondo de la base del dashboard (Claro) */
+    --bg: #0f172a;    /* Fondo principal: Azul Oscuro */
+    --card: #0c1850;   /* Fondo de tarjeta/contenedor: Azul más oscuro */
+    --text-light: #F7F8F9; /* Texto claro (usado en tu base) */
+    --text: #000000;   /* Texto general */
+    --accent: #38bdf8; /* Color de acento/enlaces: Azul brillante */
+    --accent-blue: #0ea5e9; /* Azul fuerte de tu base */
+    --border: #cddaec; /* Borde oscuro (usado en tu base) */
+    --sidebar-width: 250px; /* Ancho del sidebar */
+}
+
 /* ============ ESTILO GENERAL ============ */
 
-:root {
-    --bg: #0f172a;
-    --card: #0c1850;
-    --text: #e2e8f0;
-    --accent: #38bdf8;
-    --border: #111827;
-}
-
-/* --- Fondo de la Página --- */
+/* --- Fondo de la Página (Basado en tu dashboard) --- */
 body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-light); /* Usamos el fondo claro de tu base */
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-light); /* Usamos el color de texto claro de tu base */
+    min-height: 100vh;
+    margin: 0;
 }
 
-/* ================= FORMULARIO DE CONTACTO ================= */
+/* ==================== SIDEBAR (Basado en tu dashboard) ==================== */
+
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--card); /* #0c1850 */
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 24px 16px;
+    border-right: 1px solid var(--border); /* #1f2937 */
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar-title {
+    color: var(--text-light); /* #F7F8F9 */
+    font-size: 22px;
+    margin-bottom: 32px;
+    text-align: center;
+    padding: 0; /* Ajuste para el padding base */
+}
+
+.sidebar a {
+    color: var(--text-light); /* #F7F8F9 */
+    display: block;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a i {
+    margin-right: 8px; /* Reducido de 10px a 8px */
+    width: 20px;
+}
+
+.sidebar a:hover:not(.active) {
+    background: var(--accent-blue); /* #0ea5e9 */
+    color: #f9fafb;
+}
+
+.sidebar a.active {
+    background: var(--accent-blue); /* #0ea5e9 */
+    color: #f9fafb;
+    font-weight: 600;
+}
+
+
+/* ==================== CONTENIDO PRINCIPAL (Basado en tu dashboard) ==================== */
+
+.main-content {
+    margin-left: var(--sidebar-width); 
+    padding: 20px 26px; /* Ajuste de padding de tu base */
+    min-height: calc(100vh - 80px); 
+    color: var(--card); /* Para que el texto que no está en el contenedor sea legible sobre el fondo claro */
+}
+/* Reajustar el color de los encabezados de la página */
+.main-content h1, .main-content p {
+    color: var(--card); 
+}
+
+/* Media Query para móvil (Basado en tu dashboard) */
+@media (max-width: 992px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 10px;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .sidebar a {
+        padding: 8px 12px;
+        margin-bottom: 0; 
+    }
+    
+    .sidebar-title {
+        display: none; 
+    }
+
+    .main-content {
+        margin-left: 0; 
+    }
+}
+
+
+/* ================= FORMULARIO DE CONTACTO (Dentro de contenedor gris) ================= */
 
 .form-contact-container {
-    width: 90%;
-    max-width: 650px;
-    background: var(--card);
+    width: 100%;
+    max-width: 750px;
+    background: var(--card); /* Fondo gris/azul oscuro de la tarjeta #0c1850 */
     padding: 30px;
     margin: 45px auto;
     border-radius: 14px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border); /* #1f2937 */
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.5);
+    color: var(--text); /* Asegura que el texto dentro del contenedor sea blanco/claro */
 }
 
-.form-contact-container h2 {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    color: var(--accent);
+.form-contact-container h1, .form-contact-container h5 {
+    color: var(--accent); /* Color de acento para títulos dentro del contenedor */
 }
+
 
 label {
     font-weight: 600;
@@ -43,38 +141,51 @@ label {
 input,
 select,
 textarea {
-    background-color: #111827;
-    color: var(--text);
-    border: 1px solid #1f2937;
+    background-color: var(--border) !important; /* #111827 */
+    color: var(--text) !important;
+    border: 1px solid #1f2937 !important;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 6px var(--accent);
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 6px var(--accent) !important;
 }
 
+/* Estilo para asegurar que el mapa sea responsivo */
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    height: 0;
+    border-radius: 10px;
+}
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
 
-
+/* ==================== FOOTER ==================== */
 
 .footer-dashboard {
-    margin-left: 250px;
-    background: var(--card) !important;
-    border-top: 1px solid var(--border);
-    color: var(--text);
+    background: var(--card) !important; /* #0c1850 */
+    border-top: 1px solid var(--border); /* #1f2937 */
+    color: var(--text-light); /* #F7F8F9 */
     padding: 18px;
     text-align: center;
+    width: 100%; 
 }
 
-@media (max-width: 992px) {
+@media (min-width: 993px) {
     .footer-dashboard {
-        margin-left: 0;
-    }
+        margin-left: var(--sidebar-width);
+        width: calc(100% - var(--sidebar-width));
 }
-
-
-/* ================= BOTÓN PRINCIPAL ================= */
+}
 
 .btn-accent {
     background-color: #0ea5e9;
@@ -90,24 +201,21 @@ select:focus {
     filter: brightness(1.15);
 }
 
-
-/* ------------- ESTILO QUE USAN TARJETAS Y TABLAS ----------- */
-
 #grid .card,
 .table-card {
     background: var(--card);
     border-radius: 14px;
     border: 1px solid var(--border);
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.6);
+    box-shadow: 0 8px 20px #212529;
     color: var(--text);
 }
 
 #grid .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.8);
+    box-shadow: 0 14px 28px #212529;
 }
 
 #grid .card-title {
     color: var(--accent);
     font-weight: 600;
- }
+}
