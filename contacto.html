@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../css/contacto.css">
+</head>
+
+<body>
+
+    <!-- 🔹 MENÚ NAVEGABLE ENTRE PÁGINAS -->
+    <nav class="menu">
+        <a href="dashboard.html">Home</a>
+        <a href="productos.html">Productos</a>
+        <a href="contacto.html" class="activo">Contacto</a>
+    </nav>
+
+    <!-- 🔹 CONTENIDO PRINCIPAL -->
+    <section class="contacto-contenedor">
+        <h1>Contáctanos</h1>
+        <p>Si tienes dudas, quejas, reclamos o sugerencias, estamos aquí para ayudarte.</p>
+
+        <form>
+            <label>Nombre:</label>
+            <input type="text" placeholder="Ingresar nombre" required>
+
+            <label>Correo:</label>
+            <input type="email" placeholder="Ingresar correo" required>
+
+            <label>Mensaje:</label>
+            <textarea placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <script src="../js/contacto.js"></script>
+</body>
+</html>
