@@ -16,7 +16,7 @@ function animateValue(id, target) {
   }, stepTime);
 }
 
-fetch("../data/dashboard.json")
+fetch("/data/dashboard.json")
   .then(res => res.json())
   .then(data => {
 
