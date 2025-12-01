@@ -1,6 +1,6 @@
 /* ============ ESTILO GENERAL ============ */
 
-:root{
+:root {
     --bg: #0f172a;
     --card: #0c1850;
     --text: #e2e8f0;
@@ -9,7 +9,7 @@
 }
 
 /* --- Fondo General de la Página --- */
-body{
+body {
     background: var(--bg);
     color: var(--text);
     font-family: 'Segoe UI', sans-serif;
@@ -17,7 +17,7 @@ body{
 
 /* ================= FORMULARIO DE CONTACTO ================= */
 
-.form-contact-container{
+.form-contact-container {
     width: 90%;
     max-width: 650px;
     background: var(--card);
@@ -25,10 +25,10 @@ body{
     margin: 45px auto;
     border-radius: 14px;
     border: 1px solid var(--border);
-    box-shadow: 0 8px 20px rgba(15,23,42,0.5);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.5);
 }
 
-.form-contact-container h2{
+.form-contact-container h2 {
     text-align: center;
     font-size: 28px;
     font-weight: 700;
@@ -36,25 +36,31 @@ body{
     color: var(--accent);
 }
 
-label{ font-weight: 600; }
+label {
+    font-weight: 600;
+}
 
-input, select, textarea{
+input,
+select,
+textarea {
     background-color: #111827;
     color: var(--text);
     border: 1px solid #1f2937;
 }
 
-input:focus, textarea:focus, select:focus{
+input:focus,
+textarea:focus,
+select:focus {
     border-color: var(--accent);
     box-shadow: 0 0 6px var(--accent);
 }
 
 
-/* ================= FOOTER DASHBOARD ================= */
+
 
 .footer-dashboard {
-    margin-left: 250px; 
-    background: var(--card) !important; 
+    margin-left: 250px;
+    background: var(--card) !important;
     border-top: 1px solid var(--border);
     color: var(--text);
     padding: 18px;
@@ -62,13 +68,15 @@ input:focus, textarea:focus, select:focus{
 }
 
 @media (max-width: 992px) {
-    .footer-dashboard { margin-left: 0; }
+    .footer-dashboard {
+        margin-left: 0;
+    }
 }
 
 
 /* ================= BOTÓN PRINCIPAL ================= */
 
-.btn-accent{
+.btn-accent {
     background-color: #0ea5e9;
     border-color: #0ea5e9;
     color: #ffffff;
@@ -77,14 +85,16 @@ input:focus, textarea:focus, select:focus{
     padding: 10px;
     border-radius: 8px;
 }
-.btn-accent:hover{
+
+.btn-accent:hover {
     filter: brightness(1.15);
 }
 
 
-/* ------------- ESTE ES EL MISMO ESTILO QUE USAN TARJETAS Y TABLAS ----------- */
+/* ------------- ESTILO QUE USAN TARJETAS Y TABLAS ----------- */
 
-#grid .card, .table-card{
+#grid .card,
+.table-card {
     background: var(--card);
     border-radius: 14px;
     border: 1px solid var(--border);
@@ -92,12 +102,12 @@ input:focus, textarea:focus, select:focus{
     color: var(--text);
 }
 
-#grid .card:hover{
+#grid .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 14px 28px rgba(15, 23, 42, 0.8);
 }
 
-#grid .card-title{
+#grid .card-title {
     color: var(--accent);
     font-weight: 600;
-}
+ }
