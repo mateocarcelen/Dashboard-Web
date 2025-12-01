@@ -41,3 +41,4 @@ btnPrecio.addEventListener("click", () => {
 
   mostrar(resultado);
 });
+
