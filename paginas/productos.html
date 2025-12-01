@@ -1,252 +1,194 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Servicios - Agencia</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌎</text></svg>">
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Dashboard - Agency 360°</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <link rel="stylesheet" href="/css/dashboard.css"> 
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- ICONOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- ESTILOS -->
+  <link rel="stylesheet" href="../css/dashboard.css" />
+
+  <!-- CHART JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- PLUGIN PARA MOSTRAR PORCENTAJES EN EL DONUT -->
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 </head>
 <body>
 
-    <div class="sidebar">
-        
-        <h2>Agency 360°</h2>
-        <a href="Dashboard/paginas/productos.html" class="active">
-            <i class="fa-solid fa-box"></i> Productos
-        </a>
-        <a href="/index.html">
-            <i class="fa-solid fa-chart-line"></i> Dashboard
-        </a>
-        <a href="/paginas/contacto.html">
-            <i class="fa-solid fa-envelope"></i> Contacto
-        </a>
-    </div>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>Agency 360°</h2>
+        <a href="paginas/productos.html">
+      <i class="fa-solid fa-box"></i> Productos
+    </a>
+    <a href="index.html" class="active">
+      <i class="fa-solid fa-chart-line"></i> Dashboard
+    </a>
+    <a href="paginas/contacto.html">
+      <i class="fa-solid fa-envelope"></i> Contacto
+    </a>
+  </div>
 
-    <div class="main-content">
-        
-        <div class="topbar mb-4">
-            <div class="topbar-left">
-                <h3>Catálogo de Servicios</h3> 
-            </div>
-            <div class="topbar-right">
-                <span class="badge-pill">Información de Servicios</span>
-            </div>
-        </div>
-
-        <div class="container-fluid">
-
-<!-- ====== CARRUSEL DE JUSTIFICACIÓN DE RESULTADOS ====== -->
-<div class="mb-5">
-    <!-- Título visible sobre el fondo claro del main-content -->
-    <h1 class="text-center mb-4 main-page-title text-dark">Resultados que Impulsan tu Crecimiento</h1>
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
     
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        
-        <div class="carousel-indicators">
-            <!-- Indicadores para cada slide -->
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        
-        <div class="carousel-inner shadow-xl rounded-lg">
-            
-            <!-- Slide 1: Aumento de Tráfico (Activo por defecto) -->
-            <div class="carousel-item active">
-                <!-- Estilo en línea: Altura de 300px forzada y object-fit para no distorsionar -->
-                <img src="https://s3-us-west-2.amazonaws.com/wp-roketmkt/wp-content/uploads/2022/01/20154543/crecimiento-organico-empresas.jpg" class="d-block w-100" style="max-height: 500px; object-fit: cover; border-radius: 12px 12px 0 0;" alt="Gráfico de aumento de tráfico web y SEO">
-                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-t-lg p-3">
-                    <h5 class="fw-bold text-info">Lo que te ofrece Agency 360°</h5>
-                    <p>Agency 360° transforma tu presencia digital. Logra un crecimiento integral con estrategias de contenido profesional, campañas de publicidad de alto rendimiento y diseño gráfico que eleva tu marca.</p>
-                </div>
-            </div>
-            
-            <!-- Slide 2: Generación de Leads -->
-            <div class="carousel-item">
-                <img src="https://www.esic.edu/sites/default/files/rethink/9773cd87-cierre-de-ventas.jpg" class="d-block w-100" style="max-height: 500px; object-fit: cover; border-radius: 12px 12px 0 0;" alt="Conversión de leads y embudos de venta">
-                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-t-lg p-3">
-                    <h5 class="fw-bold text-info">Conversión Maximizada</h5>
-                    <p>Diseñamos embudos de venta que transforman visitantes en clientes leales.</p>
-                </div>
-            </div>
-            
-            <!-- Slide 3: Impacto en Redes Sociales -->
-            <div class="carousel-item">
-                <img src="https://www.puromarketing.com/uploads/img/contents/2024/QJvCOsn9oD5RFlXBWSuZ/QJvCOsn9oD5RFlXBWSuZ_post_imagen_top_content.webp" class="d-block w-100" style="max-height: 500px; object-fit: cover; border-radius: 12px 12px 0 0;" alt="Interacciones y crecimiento en redes sociales">
-                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-t-lg p-3">
-                    <h5 class="fw-bold text-info">Comunidad y Compromiso</h5>
-                    <p>Generamos contenido de valor que aumenta la interacción y lealtad de tu audiencia.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Botones de navegación (Prev / Next) -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>
+    <!-- TOPBAR -->
+    <div class="topbar mb-4">
+      <h3>Panel Principal</h3>
+      <div class="topbar-right">
+        <span class="badge-pill">Datos en vivo (mock)</span>
+        <i class="fa-regular fa-bell"></i>
+      </div>
     </div>
-</div>
-<!-- ====== FIN CARRUSEL ====== -->
-            
-            <hr class="mb-5">
-            <!-- 1. TÍTULO PRINCIPAL -->
-            <h1 class="text-center mb-4 main-page-title">Nuestros Servicios</h1>
-            
-            <!-- 2. CUADRÍCULA DE CARDS (Con JavaScript) -->
-            <div id="grid" class="row g-4 justify-content-center">
-            </div>
 
-            <!-- 3. FILTROS DE PRECIO (AHORA UBICADOS DESPUÉS DE LAS CARDS) -->
-            <div class="row mb-5 mt-4 justify-content-center">
-                <div class="col-md-5">
-                    <input type="number" id="minPrice" class="form-control form-control-dark" placeholder="Precio mínimo">
-                </div>
-                <div class="col-md-5">
-                    <input type="number" id="maxPrice" class="form-control form-control-dark" placeholder="Precio máximo">
-                </div>
-                <div class="col-md-2 d-grid">
-                    <button id="btnPrecio" type="button" class="btn btn-accent">Filtrar</button>
-                </div>
-            </div>
-
-            <!-- Botón "Quiero ponerme en contacto" (verde, grande, animado) -->
-            <div class="text-center mt-4">
-                <a href="contacto.html" 
-                class="btn btn-success btn-lg shadow-lg btn-animated" 
-                style="font-weight: 700; padding: 10px 40px; text-decoration: none;"
-                    >
-                ¡Quiero ponerme en contacto!
-                </a>
-                </div>
-                
-            <!-- 4. TABLA COMPARATIVA -->
-            <div class="table-card container my-5">
-                
-                <h1 class="text-center mb-5 section-title">Elige el Plan de Redes Sociales Ideal para tu Negocio</h1>
-                
-                <!-- El table-responsive es la clave para que la tabla no se desborde -->
-                <div class="table-responsive"> 
-                    
-                    <table class="table table-dark table-bordered table-hover align-middle">
-                        
-                        <thead>
-                            <tr class="text-uppercase fw-bold text-center table-header">
-                                <th scope="col" class="text-start" style="width: 200px;">Característica</th>
-                                <th scope="col" class="text-info">Plan Redes Sociales</th>
-                                <th scope="col" class="text-info">Plan Meta ADS</th>
-                                <th scope="col" class="text-info">Plan Grafico profesional</th>
-                                <th scope="col" class="text-info">Plan Web Empresarial</th>
-                                <th scope="col" class="text-info">Plan Manager PRO</th>
-                            </tr>
-                        </thead>
-                        
-                        <tbody>
-                            
-                            <tr>
-                                <td colspan="6" class="table-secondary fw-bold">Alcance y Contenido</td>
-                            </tr>
-                            
-                            <tr>
-                                <th scope="row">N° de Plataformas (RRSS)</th>
-                                <td class="text-center">2</td>
-                                <td class="text-center">3</td>
-                                <td class="text-center">5</td>
-                                <td class="text-center">Ilimitado</td>
-                                <td class="text-center">Ilimitado</td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">Publicaciones / Mes (Feed)</th>
-                                <td class="text-center">8</td>
-                                <td class="text-center">15</td>
-                                <td class="text-center">25</td>
-                                <td class="text-center">40</td>
-                                <td class="text-center">Ilimitado</td>
-                            </tr>
-                            
-                            <tr>
-                                <th scope="row">Creación de Guía de Estilo (Brand Book)</th>
-                                <td class="text-center"><span class="text-danger">❌</span></td>
-                                <td class="text-center"><span class="text-success">✔</span></td>
-                                <td class="text-center"><span class="text-success">✔</span></td>
-                                <td class="text-center"><span class="text-success">✔</span></td>
-                                <td class="text-center"><span class="text-success">✔</span></td>
-                            </tr>
-
-                            <tr>
-                                <td colspan="6" class="table-secondary fw-bold">Interacción y Conversión</td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">Respuestas a Mensajes Privados y Comentarios</th>
-                                <td class="text-center">Respuestas básicas</td>
-                                <td class="text-center"><span class="text-success">✔</span></td>
-                                <td class="text-center"><span class="text-success">✔</span></td>
-                                <td class="text-center"><span class="text-success">✔</span></td>
-                                <td class="text-center"><span class="text-success">✔</span></td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">Reporte Mensual de Métricas</th>
-                                <td class="text-center">Básico</td>
-                                <td class="text-center">Intermedio</td>
-                                <td class="text-center">Completo</td>
-                                <td class="text-center">Completo + Estrategia</td>
-                                <td class="text-center">Completo + Reunión Ejecutiva</td>
-                            </tr>
-                            
-                            <tr>
-                                <th scope="row">Gestión de Campañas Pagadas (Ads)</th>
-                                <td class="text-center"><span class="text-danger">❌</span></td>
-                                <td class="text-center">Solo Configuración</td>
-                                <td class="text-center">Básico</td>
-                                <td class="text-center">Completo</td>
-                                <td class="text-center">Completo + Optimización Diaria</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-    <!-- CLAVE: Añadimos la clase btn-animated y el enlace a contacto.html -->
-            <a href="contacto.html" 
-            class="btn btn-danger btn-lg shadow-lg btn-animated" 
-            style="font-weight: 700; padding: 10px 40px; text-decoration: none;"
-                >
-            ¡Empieza Ya!
-            </a>
+    <!-- KPI CARDS -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="card-dashboard">
+          <i class="fa-solid fa-users icon"></i>
+          <h5>Clientes Totales</h5>
+          <p id="kpiClientes">0</p>
         </div>
-            
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-dashboard">
+          <i class="fa-solid fa-user-plus icon"></i>
+          <h5>Clientes Nuevos</h5>
+          <p id="kpiClientesNuevos">0</p>
         </div>
-        
-         <footer class="bg-dark text-light pt-4 footer-dashboard mt-5">
-    <div class="containe-fluid">
-      <div class="text-center pb-3">
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-dashboard">
+          <i class="fa-solid fa-briefcase icon"></i>
+          <h5>Proyectos Activos</h5>
+          <p id="kpiProyectosActivos">0</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-dashboard">
+          <i class="fa-solid fa-circle-check icon"></i>
+          <h5>Proyectos Completados</h5>
+          <p id="kpiProyectosCompletados">0</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+      <div class="col-lg-3 col-md-6">
+        <div class="card-dashboard">
+          <i class="fa-solid fa-comments icon"></i>
+          <h5>Consultas Web</h5>
+          <p id="kpiConsultas">0</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-dashboard">
+          <i class="fa-solid fa-hashtag icon"></i>
+          <h5>Redes Gestionadas</h5>
+          <p id="kpiRedes">0</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-dashboard">
+          <i class="fa-solid fa-bullhorn icon"></i>
+          <h5>Campañas Activas</h5>
+          <p id="kpiCampañas">0</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="card-dashboard">
+          <i class="fa-solid fa-dollar-sign icon"></i>
+          <h5>Ingresos Mensuales</h5>
+          <p id="kpiGanancias">$0</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRÁFICAS -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-6">
+        <div class="chart-card">
+          <div class="section-title">Clientes por mes</div>
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="chart-card">
+          <div class="section-title">Planes más contratados</div>
+          <canvas id="doughnutChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+      <div class="col-lg-6">
+        <div class="chart-card">
+          <div class="section-title">Rendimiento en Redes Sociales</div>
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="chart-card">
+          <div class="section-title">Comparativa de KPIs</div>
+          <canvas id="radarChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVIDAD -->
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="table-card">
+          <div class="section-title">Actividad Reciente</div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Servicio</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="tablaActividad"></tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+        <footer class="bg-dark text-light pt-4 footer-dashboard mt-5">
+            <div class="container">
+                <div class="row">
+                <div class="text-center pb-3">
         <p class="mb-0">
             © 2025 Universidad Politécnica Salesiana - Proyecto Dashboard
             <br>
             Desarrollado por: Juan Valencia - Paula Aguilar - Mateo Carcelén
-        </p>      </div>
-    </div>
-  </footer>
+        </p>      </div>                </div>
+            </div>
+        </footer>
 
 
-    </div> 
-    
-    <script src="/js/app_productos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS -->
+  <script src="../js/dashboard.js"></script>
 
 </body>
 </html>
