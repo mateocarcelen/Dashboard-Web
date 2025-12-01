@@ -1,0 +1,58 @@
+{
+  "kpis": {
+    "clientes": 120,
+    "clientes_nuevos": 18,
+    "proyectos_activos": 15,
+    "proyectos_completados": 7,
+    "consultas": 89,
+    "redes": 34,
+    "campañas_activas": 6,
+    "ganancias_mensuales": 3200,
+    "conversiones": 82
+  },
+
+  "clientes_por_mes": [40, 55, 60, 70, 82, 95],
+
+  "rendimiento_redes": {
+    "Instagram": 85,
+    "TikTok": 78,
+    "Facebook": 65,
+    "YouTube": 50,
+    "Twitter": 40
+  },
+
+  "comparativa_kpis": {
+    "Clientes": 120,
+    "Proyectos": 15,
+    "Consultas": 89,
+    "Redes": 34,
+    "Conversiones": 82
+  },
+
+  "actividad": [
+    {
+      "cliente": "Panadería La Abuela",
+      "servicio": "Plan Redes Sociales",
+      "fecha": "2025-01-12",
+      "estado": "Completado"
+    },
+    {
+      "cliente": "TechStore",
+      "servicio": "Plan Meta ADS",
+      "fecha": "2025-01-15",
+      "estado": "En Progreso"
+    },
+    {
+      "cliente": "NovaCafé",
+      "servicio": "Plan Web Empresarial",
+      "fecha": "2025-01-18",
+      "estado": "Pendiente"
+    },
+    {
+      "cliente": "Aguacate Fit",
+      "servicio": "Plan Gráfico Profesional",
+      "fecha": "2025-01-20",
+      "estado": "Completado"
+    }
+  ]
+}

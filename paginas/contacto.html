@@ -6,81 +6,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Estilos propios de contacto -->
-    <link rel="stylesheet" href="../css/contacto.css">
-
+    <link rel="stylesheet" href="contacto.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR con enlaces cruzados -->
-    <nav class="navbar navbar-dark navbar-expand-lg px-4" style="background:#0a112d;">
-        <a class="navbar-brand fw-bold text-light" href="#">Agencia Digital</a>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0c1850;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="dashboard.html">Agencia 360</a>
 
-        <ul class="navbar-nav ms-auto d-flex gap-3">
-            <li class="nav-item"><a class="nav-link text-light" href="dashboard.html">Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link text-light" href="productos.html">Productos</a></li>
-            <li class="nav-item"><a class="nav-link active fw-bold text-info" href="contacto.html">Contacto</a></li>
-        </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <div class="container py-5">
-        <h1 class="main-page-title text-center">Formulario de Contacto</h1>
+    <!-- CONTENIDO CONTACTO -->
+    <div class="container mt-5">
+        <h1 class="text-center">Contáctanos</h1>
+        <p class="text-center">Escríbenos y nos pondremos en contacto contigo lo antes posible.</p>
 
         <div class="row justify-content-center">
             <div class="col-md-6">
 
-                <div class="form-contact-container">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Ingresa tu nombre">
+                    </div>
 
-                    <h2>Contáctanos</h2>
+                    <!-- 📱 Campo Teléfono AÑADIDO -->
+                    <div class="mb-3">
+                        <label class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" placeholder="593">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Correo</label>
+                        <input type="email" class="form-control" placeholder="Ingresa tu correo">
+                    </div>
 
-                    <form id="form-contacto">
+                    <!-- Lista de productos -->
+                    <div class="mb-3">
+                        <label class="form-label">Servicio de interés</label>
+                        <select class="form-control">
+                            <option selected disabled>Selecciona un producto...</option>
+                            <option>Plan Redes Sociales</option>
+                            <option>Plan Meta ADS</option>
+                            <option>Plan Web Empresarial</option>
+                            <option>Plan Gráfico Profesional</option>
+                            <option>Plan Manager Pro</option>
+                        </select>
+                    </div>
 
-                        <div class="mb-3">
-                            <label>Nombre completo</label>
-                            <input type="text" class="form-control" placeholder="Ej: Paula Villarreal">
-                        </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mensaje</label>
+                        <textarea class="form-control" rows="4" placeholder="Escribe tu mensaje"></textarea>
+                    </div>
 
-                        <div class="mb-3">
-                            <label>Correo electrónico</label>
-                            <input type="email" class="form-control" placeholder="ejemplo@gmail.com">
-                        </div>
+                    <!-- Botones centrados y alineados -->
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
 
-                        <div class="mb-3">
-                            <label>Servicio de interés</label>
-                            <select class="form-select">
-                                <option selected disabled>Selecciona un servicio</option>
-                                <option>Gestión Instagram</option>
-                                <option>Gestión TikTok</option>
-                                <option>Paquete de diseño gráfico</option>
-                                <option>Campaña Meta Ads</option>
-                            </select>
-                        </div>
+                        <button type="submit" class="btn btn-primary px-4">Enviar</button>
 
-                        <div class="mb-3">
-                            <label>Mensaje</label>
-                            <textarea class="form-control" rows="4" placeholder="Describe tu proyecto..."></textarea>
-                        </div>
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/5930999898967?text=Hola,%20quiero%20más%20información%20sobre%20los%20servicios🚀"
+                            target="_blank"
+                            class="btn btn-success px-4 d-inline-flex align-items-center">
 
-                        <button class="btn btn-accent w-100">Enviar</button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 32 32" class="me-2">
+                                <path d="M16.004 3.003c-7.167 0-12.997 5.828-12.997 12.997 0 2.292.597 4.527 1.733 6.497L3 29l6.695-1.74
+                                c1.907 1.04 4.06 1.59 6.307 1.59h.003c7.17 0 13-5.83 13-12.997 0-3.465-1.35-6.72-3.807-9.177C22.727 4.353
+                                19.468 3.003 16.004 3.003zm6.218 18.585c-.26.727-1.516 1.397-2.12 1.49-.543.083-1.21.118-1.953-.123-.45-.143-1.03-.336-1.77-.659-3.11-1.344-5.14-4.47-5.296-4.675-.157-.21-1.26-1.677-1.26-3.195
+                                0-1.52.793-2.267 1.073-2.574.28-.307.61-.384.81-.384.204 0 .405.002.582.01.19.01.44-.07.69.526.26.617.88 2.14.956 2.294.08.153.132.33.027.54-.106.21-.16.338-.315.52-.158.182-.333.406-.476.545-.158.157-.322.328-.14.643.184.313.818 1.346 1.757 2.18 1.205 1.075 2.228 1.41 2.54 1.567.315.157.497.132.68-.08.183-.21.78-.91.99-1.224.21-.314.416-.257.696-.157.28.098 1.772.835 2.075.986.304.153.506.235.582.368.08.132.08.768-.18 1.495z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </form>
 
-                    </form>
-
+                <!-- MAPA -->
+                <div class="mt-4 text-center">
+                    <h5><strong>📍 Nuestra ubicación - Equipo Agencia 360</strong></h5>
+                    <iframe 
+                        src="https://www.google.com/maps?q=Av.+12+de+Octubre,+Quito&output=embed"
+                        width="100%" height="240" style="border-radius:10px; border:1px solid #0c1850;">
+                    </iframe>
                 </div>
+
             </div>
         </div>
     </div>
-
-    <!-- FOOTER -->
-    <footer class="footer-dashboard">
+    <footer class="footer-dashboard text-center py-3 mt-5">
         <div class="text-center pb-3">
-            © 2025 Agencia Digital - Todos los derechos reservados
-        </div>
+            © 2025 Agencia Digital - Elaborado por Paula,Juanse y Matero!
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -4,8 +4,8 @@
     "nombre": "Gestión de Redes Sociales",
     "categoria": "social",
     "precio": 120,
-    "descripcion": "Creamos y administramos contenido para Instagram, Facebook y TikTok.",
-    "imagen": "img/redes.jpg"
+    "descripcion": "Creamos y administramos contenido enfocado en redes sociales como Instagram, Facebook y TikTok.",
+    "imagen": "img/redes_sociales.png"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "categoria": "ads",
     "precio": 150,
     "descripcion": "Campañas de alto rendimiento en Facebook e Instagram Ads.",
-    "imagen": "img/ads.jpg"
+    "imagen": "img/meta_ads.webp"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "categoria": "design",
     "precio": 90,
     "descripcion": "Diseño de logotipos, flyers, post y branding.",
-    "imagen": "img/diseno.jpg"
+    "imagen": "img/diseño_grafico.webp"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "categoria": "web",
     "precio": 300,
     "descripcion": "Páginas web modernas, rápidas y optimizadas.",
-    "imagen": "img/web.jpg"
+    "imagen": "img/web_development.jpg"
   },
   {
     "id": 5,
@@ -37,6 +37,6 @@
     "categoria": "social",
     "precio": 180,
     "descripcion": "Gestión profesional de redes con estrategias de crecimiento.",
-    "imagen": "img/cm.jpg"
+    "imagen": "img/comunnity_manager.webp"
   }
 ]
