@@ -5,7 +5,7 @@ const btnPrecio = document.getElementById("btnPrecio");
 
 let servicios = [];
 
-fetch("/data/data_productos.json")
+fetch("../data/data_productos.json")
   .then(res => res.json())
   .then(data => {
     servicios = data;
@@ -41,4 +41,3 @@ btnPrecio.addEventListener("click", () => {
 
   mostrar(resultado);
 });
-
